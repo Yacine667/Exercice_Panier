@@ -34,6 +34,8 @@
                 "</thead>",
             "<tbody>";
 
+        $totalGeneral = 0;
+
         foreach($_SESSION['products'] as $index => $product){
 
             echo "<tr>",
@@ -55,7 +57,7 @@
 
     }
 
-
+var_dump($_SESSION);
     
     
 ?>
