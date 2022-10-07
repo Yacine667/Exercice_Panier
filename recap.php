@@ -14,17 +14,19 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<div id=gen>
+
 <body>
 
-<div class="container-fluid" >
+    <div id=gen>
 
-<div class="container" >
+        <div class="container-fluid" >
 
-<nav class="navbar navbar-expand-md navbar-light ">
-        <a class="navbar-brand" href="http://localhost/appli/index.php">Ajout De Produit |</a>
-        <a class="navbar-brand" href="http://localhost/appli/recap.php">|  Récapitulatif Des Produits</a>
-      </nav>
+            <div class="container" >
+
+                <nav class="navbar navbar-expand-md navbar-light ">
+                <a class="navbar-brand" href="http://localhost/appli/index.php">Ajout De Produit |</a>
+                <a class="navbar-brand" href="http://localhost/appli/recap.php">|  Récapitulatif Des Produits</a>
+                </nav>
     
 
 <?php 
@@ -67,15 +69,16 @@
                 "</tr>",        
             "</tbody",
         "</table>";
-
-    }
-
-
-    
+    }   
     
 ?>
-</div>
-   </div> 
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
-</div> 
+
 </html>
