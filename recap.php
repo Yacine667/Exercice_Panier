@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+<div id=gen>
 <body>
 
 <div class="container-fluid" >
@@ -76,4 +77,5 @@
 </div>
    </div> 
 </body>
+</div> 
 </html>
