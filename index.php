@@ -14,6 +14,12 @@
 
 <div class="container">
 
+      <nav class="navbar navbar-expand-md navbar-light ">
+        <a class="navbar-brand" href="http://localhost/appli/index.php">Ajout De Produit |</a>
+        <a class="navbar-brand" href="http://localhost/appli/recap.php">|  Récapitulatif Des Produits</a>
+      </nav>
+    
+
     <h1>Ajouter un produit</h1>
 
     <form action="traitement.php" method="post">
