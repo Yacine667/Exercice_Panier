@@ -1,6 +1,9 @@
+
+
 <?php
 
     session_start();
+    require ('function.php');
 
 ?>
 
@@ -38,7 +41,7 @@
                     }
 
                     else {
-                        echo count($_SESSION['products']);
+                        echo addpanier ();
                     };               
                 
                 ?>

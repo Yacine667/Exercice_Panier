@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    require ('function.php');
+
 
     $action = $_GET["action"];
     $id = (isset($_GET["id"])) ? $_GET["id"] : "";

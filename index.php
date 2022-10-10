@@ -1,6 +1,9 @@
+
+
 <?php
 
-    session_start();
+    session_start();    
+    require ('function.php');
 
 ?>
 
@@ -39,7 +42,7 @@
                     }
 
                     else {
-                        echo count($_SESSION['products']);
+                        echo addpanier();
                     };               
                 
                 ?>
@@ -63,16 +66,14 @@
                     <p>            
                         <label>
                             Prix du produit :
-                            <input type="number" class="form-control form-control-lg mb-3 shadow-lg" step="any" name="price">
+                            <input type="number" min="0.01" class="form-control form-control-lg mb-3 shadow-lg" step="any" name="price">
                         </label>
                     </p>
 
                     <p>
                         <label>
                             Quantité désirée :
-                            <input type="number" 
-                            min="1"
-                            class="form-control form-control-lg mb-3 shadow-lg" name="qtt" value="1">
+                            <input type="number" min="1" class="form-control form-control-lg mb-3 shadow-lg" name="qtt" value="1">
                         </label>            
                     </p>
 
