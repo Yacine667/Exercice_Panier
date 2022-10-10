@@ -73,16 +73,17 @@
 
         foreach($_SESSION['products'] as $index => $product){
 
+            $newtotal = $product['qtt']* $product['price'];
             echo "<tr>",
                     "<td>".$index."</td>",
                     "<td>".$product['name']."</td>",
                     "<td>".number_format($product['price'], 2,",", "&nbsp;")."&nbsp;€</td>",
-                    "<td><a class='navbar-brand' href='traitement.php?action=retireProduit'><i class='fa-solid fa-minus'></i></a>".$product['qtt']."<a class='navbar-brand' href='traitement.php?action=addProduit'><i class='fa-solid fa-plus'></i></a></td>",                    
-                    "<td>".number_format($product['total'], 2,",", "&nbsp;")."&nbsp;€</td>",
+                    "<td><a class='navbar-brand' href='traitement.php?action=retireProduit&id=$index'><i class='fa-solid fa-minus'></i></a>".$product['qtt']."<a class='navbar-brand' href='traitement.php?action=addProduit&id=$index'><i class='fa-solid fa-plus'></i></a></td>",                    
+                    "<td>".number_format($newtotal, 2,",", "&nbsp;")."&nbsp;€</td>",
                     "<td><a class='navbar-brand' href='traitement.php?action=deleteProduct&id=$index'><i class='fa-regular fa-trash-can'></i></a></td>",
                 "</tr>";
                 
-            $totalGeneral += $product['total'];
+            $totalGeneral += $newtotal;
         }
 
         echo "<tr>",

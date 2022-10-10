@@ -23,6 +23,8 @@
                         "qtt" => $qtt,
                         "total" => $price*$qtt
                     ];
+
+                    
         
                     $_SESSION['products'][] = $product;
                 }
@@ -38,12 +40,16 @@
 
         case "addProduit":
 
-           
-            header("Location:recap.php");
+          $_SESSION["products"][$id]['qtt']++;
+           header("Location:recap.php");
         break;
 
         case "retireProduit":
+            $newqtt = $_SESSION["products"][$id]['qtt']--;
 
+            if ($newqtt == 1) {
+                unset($_SESSION["products"][$id]);
+            }
             header("Location:recap.php");
         break;
 
