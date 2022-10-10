@@ -40,19 +40,19 @@
 
                     else {
                         echo count($_SESSION['products']);
-                    };
-
-                
+                    };               
                 
                 ?>
-                </nav>
+
+                <a class="navbar-brand" href="traitement.php?action=viderPanier"><i class="fa-regular fa-trash-can"></i></a>
 
                 </nav>
+
     
 
                 <h1>Ajouter un produit</h1>
 
-                <form action="traitement.php" method="post">
+                <form action="traitement.php?action=ajouterProduit" method="post">
                     <p>
                         <label>
                             Nom du produit :
