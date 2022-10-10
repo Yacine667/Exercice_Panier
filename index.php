@@ -71,7 +71,7 @@
                         <label>
                             Quantité désirée :
                             <input type="number" 
-                            min="0"
+                            min="1"
                             class="form-control form-control-lg mb-3 shadow-lg" name="qtt" value="1">
                         </label>            
                     </p>

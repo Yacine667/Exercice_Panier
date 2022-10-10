@@ -39,15 +39,13 @@
 
                     else {
                         echo count($_SESSION['products']);
-                    };
-                
+                    };               
                 
                 ?>
 
                 <a class="navbar-brand" href="traitement.php?action=viderPanier"><i class="fa-regular fa-trash-can"></i></a>
 
-                </nav>
-    
+                </nav>    
 
 <?php 
 
