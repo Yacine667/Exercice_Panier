@@ -73,7 +73,6 @@
             $name = $_SESSION["products"][$id]['name'];
             $_SESSION['messages'] = 'Le produit '.$name.' est bien supprimé !';
             unset($_SESSION["products"][$id]);
-            unset($_SESSION["products"][$id]);
             header("Location:recap.php");
 
         break;
