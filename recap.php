@@ -100,7 +100,7 @@
             </div>
 
         </div>
-
+        <div class="text-green-500 "><?php  echo afficherMessage(); unset($_SESSION['messages']);?></div>
     </div>
 
 </body>

@@ -46,6 +46,7 @@
 
             unset($_SESSION["products"]);
             header("Location:recap.php");
+            $_SESSION['messages'] = 'Le panier est vidé !';
 
         break;
 
@@ -68,7 +69,10 @@
         break;
 
         case "deleteProduct":
-
+            
+            $name = $_SESSION["products"][$id]['name'];
+            $_SESSION['messages'] = 'Le produit '.$name.' est bien supprimé !';
+            unset($_SESSION["products"][$id]);
             unset($_SESSION["products"][$id]);
             header("Location:recap.php");
 
