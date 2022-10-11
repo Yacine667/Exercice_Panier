@@ -12,6 +12,14 @@ function addpanier () {
     return $panier;
 }
 
+function afficherMessage(){
+    if (isset($_SESSION['messages'])){
+        return $_SESSION['messages'];
+    }else{
+        return null;
+    }
+}
+
 
 
 

@@ -18,6 +18,10 @@
                 $price = filter_input(INPUT_POST,"price",FILTER_VALIDATE_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
         
                 $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
+
+                $succes = 'Votre produit est ajouté !';
+
+                $delete = "Produit supprimé !";
         
                 if($name && $price && $qtt){
         
@@ -30,7 +34,10 @@
         
                     $_SESSION['products'][] = $product;
                 }
-            }        
+            }  
+            
+            $_SESSION['messages'] = 'Le produit '.$name.' est bien enregistré !';
+
             header("Location:index.php");
 
         break;
@@ -68,5 +75,7 @@
         break;
 
     }
+
+    
 
     
