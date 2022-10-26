@@ -85,25 +85,30 @@
                 $product = findOneById($_GET['id']);
                 $name = $product['name'];
                 $price = $product['price'];
-        
-                if($name && $price){
-        
-                    $product = [
-                        "name" => $name,
-                        "price" => $price,
-                        "qtt" => 1                        
+                
+                foreach ($_SESSION["products"] as $index=>$productInSession) {
+
+                    if ($productInSession['bddId']==$product['id']) {
+    
+                        return header("location:traitement.php?action=addProduit&id=".$index."");
+    
+                    }
+    
+                }
+    
+                $product = [
+                            "name" => $name,
+                            "price" => $price,
+                            "qtt" => 1,
+                            "bddId"=> $product['id']                      
                     ];                    
         
-                    $_SESSION['products'][] = $product;
-                }
-            }  
+                $_SESSION['products'][] = $product;
 
-           
-   header("Location:recap.php");
+                header("Location:recap.php"); 
+                
+                }           
+
         break;
 
-    }
-
-    
-
-    
+}
