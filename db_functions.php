@@ -26,23 +26,18 @@ function findAll (){
  
     }
 
-    
-
-
 
 function findOneById($id) {
 
         $pdo = connect();
-        $sqlQuery = 'SELECT * FROM product WHERE id =  :id';
+        $sqlQuery = 'SELECT * FROM product WHERE id = :id';
         $productStatement = $pdo->prepare($sqlQuery);
         $productStatement->bindValue(":id", $id);
         $productStatement->execute();
         $product = $productStatement->fetch();        
         return $product; 
-    }
-        
-    
-        
+
+    }        
 
 
 function insertProduct($name, $descr ,$price) {

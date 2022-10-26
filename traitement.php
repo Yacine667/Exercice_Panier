@@ -2,6 +2,7 @@
 
     session_start();
     require ('function.php');
+    require('db_functions.php');
 
 
     $action = $_GET["action"];
@@ -19,9 +20,9 @@
         
                 $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
 
-                $succes = 'Votre produit est ajouté !';
+                //$succes = 'Votre produit est ajouté !';
 
-                $delete = "Produit supprimé !";
+                //$delete = "Produit supprimé !";
         
                 if($name && $price && $qtt){
         
@@ -75,6 +76,30 @@
             unset($_SESSION["products"][$id]);
             header("Location:recap.php");
 
+        break;
+
+        case "ajouterProduitBask": 
+
+            if(isset($_GET['id'])){   
+                
+                $product = findOneById($_GET['id']);
+                $name = $product['name'];
+                $price = $product['price'];
+        
+                if($name && $price){
+        
+                    $product = [
+                        "name" => $name,
+                        "price" => $price,
+                        "qtt" => 1                        
+                    ];                    
+        
+                    $_SESSION['products'][] = $product;
+                }
+            }  
+
+           
+   header("Location:recap.php");
         break;
 
     }

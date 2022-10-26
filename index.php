@@ -11,7 +11,9 @@ foreach ($products as $product) {
         echo "<h2><a href='product.php?id=$id'>". $product['name']." </a></h2>"?>
         <p><?php echo $product['description'] ?></p>
         <strong><p><?php echo $product['price'] ?>€</p></strong>
-        <a href="traitement.php?action=ajouterProduit"> Ajouter au panier <br></a>
+       
+        <?php
+        echo "<a href='traitement.php?action=ajouterProduitBask&id=$id'>Ajouter au panier</a>"?>
 
     <?php
     }
