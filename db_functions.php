@@ -53,7 +53,7 @@ function insertProduct($name, $descr ,$price) {
 
     $insertProduct->execute([
         'name' => '$name',
-        'descr' => '$descr',
+        'descr' => '$description',
         'price' => '$price',
         'is_enabled' => 1
     ]);
