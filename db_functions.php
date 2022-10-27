@@ -40,19 +40,20 @@ function findOneById($id) {
     }        
 
 
-function insertProduct($name, $descr ,$price) {
+function insertProduct($name, $description ,$price,) {
 
     $pdo = connect();
-    $sqlQuery = 'INSERT INTO product(name, descr, price, is_enabled) VALUES (:name, :descr, :price, :is_enabled)';
+    $sqlQuery = 'INSERT INTO product(name, description, price) VALUES (:name, :description, :price)';
     $insertProduct = $pdo->prepare($sqlQuery);
 
     $insertProduct->execute([
-        'name' => '$name',
-        'descr' => '$description',
-        'price' => '$price',
-        'is_enabled' => 1
+        'name' => $name,
+        'description' => $description,
+        'price' => $price,
+        
     ]);
 
+   
     }
 
 ?>

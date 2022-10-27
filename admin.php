@@ -53,15 +53,20 @@
 
     
 
-                <h1>Ajouter un produit</h1>
+                <h1>Ajouter un produit en base de données</h1>
 
-                <form action="traitement.php?action=ajouterProduit" method="post">
+                <form action="traitement.php?action=ajouterProduitBdd" method="post">
                     <p>
                         <label>
                             Nom du produit :
                             <input type="text" class="form-control form-control-lg mb-3 shadow-lg" name="name">
                         </label>
                     </p>
+
+                    <label> 
+                        Description du produit :
+                        <textarea class="form-control form-control-lg mb-3 shadow-lg" name="description" cols="24" rows="4"></textarea>
+                    </label>
 
                     <p>            
                         <label>
@@ -71,19 +76,12 @@
                     </p>
 
                     <p>
-                        <label>
-                            Quantité désirée :
-                            <input type="number" min="1" class="form-control form-control-lg mb-3 shadow-lg" name="qtt" value="1">
-                        </label>            
-                    </p>
-
-                    <p>
                         <input class="btn btn-primary mb-2 shadow-lg" type="submit" name="submit" value="Ajouter le produit">
                     </p>
                 </form>
 
             </div>    
-            <div class="text-green-500 "><?php  echo afficherMessage(); unset($_SESSION['messages']);?></div>
+            <div><?php  echo afficherMessage(); unset($_SESSION['messages']);?></div>
         </div>
 
     </div>

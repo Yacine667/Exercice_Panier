@@ -10,36 +10,30 @@
 
     switch($action) {
 
-        case "ajouterProduit": 
+        case "ajouterProduitBdd": 
 
             if(isset($_POST['submit'])){
 
-                $name = filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING);
+                $name = filter_input(INPUT_POST,"name",FILTER_SANITIZE_SPECIAL_CHARS); 
+                
+                $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
         
-                $price = filter_input(INPUT_POST,"price",FILTER_VALIDATE_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
+                $price = filter_input(INPUT_POST,"price",FILTER_VALIDATE_FLOAT,FILTER_FLAG_ALLOW_FRACTION); 
+                
+                if($name && $price && $description){
         
-                $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
-
-                //$succes = 'Votre produit est ajouté !';
-
-                //$delete = "Produit supprimé !";
-        
-                if($name && $price && $qtt){
-        
-                    $product = [
-                        "name" => $name,
-                        "price" => $price,
-                        "qtt" => $qtt,
-                        "total" => $price*$qtt
-                    ];                    
-        
-                    $_SESSION['products'][] = $product;
+                  
+                    $lastId = insertProduct($name,$description,$price);
+                    header("Location:index.php");
                 }
+
             }  
+
+            
             
             $_SESSION['messages'] = 'Le produit '.$name.' est bien enregistré !';
 
-            header("Location:index.php");
+            
 
         break;
 
@@ -90,10 +84,8 @@
 
                     if ($productInSession['bddId']==$product['id']) {
     
-                        return header("location:traitement.php?action=addProduit&id=".$index."");
-    
-                    }
-    
+                        return header("location:traitement.php?action=addProduit&id=".$index."");    
+                    }    
                 }
     
                 $product = [
@@ -106,9 +98,9 @@
                 $_SESSION['products'][] = $product;
 
                 header("Location:recap.php"); 
-                
-                }           
 
-        break;
+                }   
+
+            break;
 
 }
