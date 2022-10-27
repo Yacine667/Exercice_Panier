@@ -20,22 +20,25 @@
         
                 $price = filter_input(INPUT_POST,"price",FILTER_VALIDATE_FLOAT,FILTER_FLAG_ALLOW_FRACTION); 
                 
-                if($name && $price && $description){
-        
+                if($name && $price && $description){     
+                    
                   
-                    $lastId = insertProduct($name,$description,$price);
-                    header("Location:index.php");
+                    $id = insertProduct($name,$description,$price);
+                    
+                    header("Location:product.php?id=$id");
+                    
                 }
 
-            }  
-
+            }             
             
-            
-            $_SESSION['messages'] = 'Le produit '.$name.' est bien enregistré !';
-
-            
+            $_SESSION['messages'] = 'Le produit '.$name.' est bien enregistré !';           
 
         break;
+
+
+        case "suprrProduitBdd" :
+
+            deleteProduct($id);
 
         case "viderPanier":
 

@@ -16,6 +16,7 @@ foreach ($products as $product) {
        
         <?php echo "<a href='traitement.php?action=ajouterProduitBask&id=$id'>Ajouter au panier</a>"?>
 
+        
     <?php
     }
 
