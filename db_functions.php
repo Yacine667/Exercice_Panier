@@ -41,7 +41,7 @@ function findOneById($id)
 }
 
 
-function insertProduct($name, $description, $price,)
+function insertProduct($name, $description, $price)
 {
 
     $pdo = connect();
