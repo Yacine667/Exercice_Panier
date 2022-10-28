@@ -25,12 +25,11 @@ $product = findOneById($_GET['id']);
 </head>
 <body>
 <div id=gen>
-<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="container">
 
-<div class="container">
 
-
-<table class='table table-light table-hover'>
+            <table class='table table-light table-hover'>
                 <thead>
                     <tr>
                         
@@ -38,25 +37,23 @@ $product = findOneById($_GET['id']);
                         <th>Description</th>
                         <th>Prix</th>
                         <th>Action</th>
+
                     </tr>
                 </thead>
-            <tbody>
+                <tbody>
+                    <tr>
+                        <td><?php echo $product['name'] ?></td>
 
-            <tr>
+                        <td><?php echo $product['description'] ?></td>
 
+                        <td><?php echo $product['price'] ?> €</td>
 
-            <td><?php echo $product['name'] ?></td>
-
-            <td><?php echo $product['description'] ?></td>
-
-            <td><?php echo $product['price'] ?> €</td>
-
-            <td><?php echo "<a href='traitement.php?action=ajouterProduitBask&id=$product[id]'>Ajouter au panier</a>"?></td>
-            </tr>       
+                        <td><?php echo "<a href='traitement.php?action=ajouterProduitBask&id=$product[id]'>Ajouter au panier</a>"?></td>
+                    </tr>       
                 </tbody
             </table>
 
-            </div>   
-            </div>  
+        </div>   
+    </div>  
 </div>       
 

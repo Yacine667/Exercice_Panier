@@ -68,8 +68,8 @@ foreach ($products as $product) {
 
 
 ?>
-</div>  
-</div>  
-</div>
+                </div>  
+            </div>  
+        </div>
 </body>
 </html>

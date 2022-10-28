@@ -34,8 +34,8 @@ function findOneById($id)
     $pdo = connect();
     $sqlQuery = 'SELECT * FROM product WHERE id = :id';
     $productStatement = $pdo->prepare($sqlQuery);
-    $productStatement->bindValue(":id", $id);
-    $productStatement->execute();
+    // $productStatement->bindValue(":id", $id);
+    $productStatement->execute(["id" => $id]);
     $product = $productStatement->fetch();
     return $product;
 }
@@ -52,8 +52,6 @@ function insertProduct($name, $description, $price)
         'name' => $name,
         'description' => $description,
         'price' => $price,
-
-
     ]);
 
     return $pdo->lastInsertId();
@@ -66,5 +64,6 @@ function deleteProduct($id)
     $sqlQuery = $pdo->prepare("DELETE FROM product WHERE id = :id");
     $sqlQuery->bindParam(':id', $id, PDO::PARAM_INT);
     $sqlQuery->execute();
-    echo 'Données supprimées';
+    
 }
+

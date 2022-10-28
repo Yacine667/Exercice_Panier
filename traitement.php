@@ -4,7 +4,6 @@
     require ('function.php');
     require('db_functions.php');
 
-
     $action = $_GET["action"];
     $id = (isset($_GET["id"])) ? $_GET["id"] : "";
 
@@ -34,7 +33,6 @@
             $_SESSION['messages'] = 'Le produit '.$name.' est bien enregistré !';           
 
         break;
-
 
         case "suprrProduitBdd" :
 
@@ -104,6 +102,17 @@
 
                 }   
 
+            break;
+
+        case "deleteProductBdd":
+
+            if(isset($_GET['id'])){   
+                
+                $productDel = deleteProduct($_GET['id']);
+            }
+
+
+            header("Location:admin.php"); 
             break;
 
 }
